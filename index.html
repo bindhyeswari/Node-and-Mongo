@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="base.css"/>
+    <title>Demo</title>
+    <script src="bower_components/angular/angular.js"></script>
+    <script>
+        angular.module('myApp', []).controller('MyController', function ($scope, $http) {
+            $scope.message = 'Hello';
+            $http.get('/Beginning-Node/data.json').then(function (config) {
+                console.log(config.data);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div ng-controller="MyController">
+        {{message | uppercase}}
+    </div>
+</body>
+</html>

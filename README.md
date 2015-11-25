@@ -28,7 +28,11 @@
     
 ##References
     - [Mongoose Documentaiton](http://mongoosejs.com/docs/documents.html)
-    - 
+    - [Modules in node](https://nodejs.org/api/modules.html)
+    
+##Tasks
+    - Modularation of code from the references ... 
+    
 
  
  

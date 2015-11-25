@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../base.css"/>
+    <title>Demo</title>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script>
+        angular.module('myApp', []).controller('MyController', function ($scope) {
+            $scope.message = 'Deep Copy';
+
+            var manali = {
+                name: 'Manali',
+                email: 'manali@gmail.com',
+                address: {
+                    city: 'Sunnyvale'
+                }
+            };
+
+            var james = {};
+
+            // james = manali will point to the same object, so it will not work
+
+            function copy (src, target) {
+                for (var prop in src) {
+                    console.log(prop);
+                    target[prop] = src[prop];
+                }
+            }
+
+            copy(manali, james);
+
+            james.name = 'James Joonso Kim';
+            console.log('james: ', james);
+            console.log('manali: ', manali);
+
+            // Is it actually a deep copy?
+
+            james.address.city = 'San Jose';
+            console.log('manali.address.city', manali.address.city);
+
+
+            // todo:  Write code to perform a deep copy of the objects at "n" levels
+
+
+        });
+    </script>
+</head>
+<body>
+    <div ng-controller="MyController">
+        {{message}}
+    </div>
+</body>
+</html>

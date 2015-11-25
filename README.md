@@ -9,7 +9,7 @@
  - [Request](https://www.npmjs.com/package/request)
  
 #Tasks: 
- - Finish the tasks above
+ - Finish the tasks above (written for Tue 24 Nov 2015)
  - Practice mongo code
  - Prepare for AngularJS test tomorrow from the following links (the rest will be from the information provided in the class)
     - Functions [Reference](https://docs.angularjs.org/api/ng/function)
@@ -18,5 +18,18 @@
     - Scopes
     - Two Way Data Binding
     - Digest Loop
+    
+    
+# Wednesday, Nov 25
+   
+##Doubts
+    - angular.noop - explained the || operator
+    - angular.extend vs angular.merge (deep copy)
+    
+##References
+    - [Mongoose Documentaiton](http://mongoosejs.com/docs/documents.html)
+    - 
+
+ 
  
   

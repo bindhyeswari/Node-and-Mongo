@@ -28,7 +28,13 @@ mongoose.connect('mongodb://localhost/test', function (err) {
     else {
         console.log('Connected to mongodb!');
         // createUser();
-        getAllUsers();
+         getAllUsers();
+        // var id = '5654ed2ff6126f388bd21bd4';
+        /*updateUser(id, {
+            email: 'james.kim@gmail.com'
+        });*/
+        deleteUser('5654ed2ff6126f388bd21bd4');
+
     }
 });
 
@@ -57,6 +63,23 @@ function getAllUsers() {
 
         console.log(usernames);
     });
+}
+
+// partial updates
+function updateUser(_id, updates) {
+    UserModel.findByIdAndUpdate(_id, {
+        $set: updates
+    }, function (err, results) {
+        if (err) console.log('There was an error updating the object.', err);
+        else console.log('The element ', _id, ' was successfully updated.');
+    });
+}
+
+function deleteUser(_id) {
+    UserModel.findByIdAndRemove(_id, function (err, res) {
+        if (err) console.log('There was an error deleting the object.', err);
+        else console.log('The element ', _id, ' was successfully deleted.', res);
+    })
 }
 
 
